@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-
+import { PeopleService } from '../../services/people.service';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule, CardModule, ButtonModule],
+  imports: [CommonModule, CardModule, ButtonModule, ProgressSpinnerModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   characters = [
     {
       name: "Luke Skywalker",
@@ -83,4 +84,21 @@ export class CardComponent {
       gender: "male",
     },
   ];
+
+  people: any[] = [];
+
+  constructor(
+    private peopleService: PeopleService
+  ) {}
+
+  ngOnInit(): void {
+    this.getPeople();
+  }
+
+  getPeople() {
+    this.peopleService.getPeople().subscribe((data: any) => {
+      this.people = data.results;
+      console.log('people', this.people);
+    })
+  }
 }
