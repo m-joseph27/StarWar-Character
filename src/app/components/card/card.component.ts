@@ -4,6 +4,8 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { PeopleService } from '../../services/people.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { IPeople, IPerson } from '../../interfaces/people.interface';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -12,83 +14,11 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  characters = [
-    {
-      name: "Luke Skywalker",
-      height: "172",
-      mass: "77",
-      hair_color: "blond",
-      skin_color: "fair",
-      eye_color: "blue",
-      birth_year: "19BBY",
-      gender: "male",
-    },
-    {
-      name: "Darth Vader",
-      height: "202",
-      mass: "136",
-      hair_color: "none",
-      skin_color: "white",
-      eye_color: "yellow",
-      birth_year: "41.9BBY",
-      gender: "male",
-    },
-    {
-      name: "Leia Organa",
-      height: "150",
-      mass: "49",
-      hair_color: "brown",
-      skin_color: "light",
-      eye_color: "brown",
-      birth_year: "19BBY",
-      gender: "female",
-    },
-    {
-      name: "Leia Organa",
-      height: "150",
-      mass: "49",
-      hair_color: "brown",
-      skin_color: "light",
-      eye_color: "brown",
-      birth_year: "19BBY",
-      gender: "female",
-    },
-    {
-      name: "Leia Organa",
-      height: "150",
-      mass: "49",
-      hair_color: "brown",
-      skin_color: "light",
-      eye_color: "brown",
-      birth_year: "19BBY",
-      gender: "female",
-    },
-    {
-      name: "Leia Organa",
-      height: "150",
-      mass: "49",
-      hair_color: "brown",
-      skin_color: "light",
-      eye_color: "brown",
-      birth_year: "19BBY",
-      gender: "female",
-    },
-    {
-      name: "Luke Skywalker",
-      height: "172",
-      mass: "77",
-      hair_color: "blond",
-      skin_color: "fair",
-      eye_color: "blue",
-      birth_year: "19BBY",
-      gender: "male",
-    },
-  ];
-
-  people: any[] = [];
+  people: IPeople[] = [];
 
   constructor(
-    private peopleService: PeopleService
+    private peopleService: PeopleService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -98,7 +28,11 @@ export class CardComponent implements OnInit {
   getPeople() {
     this.peopleService.getPeople().subscribe((data: any) => {
       this.people = data.results;
-      console.log('people', this.people);
     })
+  }
+
+  toDetailPerson(character: any) {
+    const characterId = character.url.split('/').filter(Boolean).pop();
+    this.router.navigate(['/people', characterId]);
   }
 }
