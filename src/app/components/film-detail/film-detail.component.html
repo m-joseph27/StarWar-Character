@@ -1,0 +1,63 @@
+<div class="detail-wrapper">
+  <div class="container mx-auto p-6 text-white">
+    <div *ngIf="film else loading" class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h1 class="text-title text-4xl font-bold mb-4">{{ film.title }}</h1>
+      <p class="text-lg mb-2"><strong>Episode:</strong> {{ film.episode_id }}</p>
+      <p class="mb-4"><strong>Opening Crawl:</strong> {{ film.opening_crawl }}</p>
+      <p class="mb-2"><strong>Director:</strong> {{ film.director }}</p>
+      <p class="mb-2"><strong>Producer:</strong> {{ film.producer }}</p>
+      <p class="mb-4"><strong>Release Date:</strong> {{ film.release_date }}</p>
+      <div class="mb-4">
+        <hr class="mb-4"/>
+        <h2 class="text-title text-2xl font-semibold">Characters</h2>
+        <ul class="list-disc list-inside">
+          <li class="cursor-pointer" *ngFor="let character of film.characters">
+            <span class="text-blue-300">{{ 'Character ' + getTheNumber(character) }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <hr class="mb-4"/>
+        <h2 class="text-title text-2xl font-semibold">Planets</h2>
+        <ul class="list-disc list-inside">
+          <li class="cursor-pointer" *ngFor="let planet of film.planets">
+            <span class="text-blue-300">{{ 'Planet ' + getTheNumber(planet) }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <hr class="mb-4"/>
+        <h2 class="text-title text-2xl font-semibold">Starships</h2>
+        <ul class="list-disc list-inside">
+          <li class="cursor-pointer" *ngFor="let starship of film.starships">
+            <span class="text-blue-300">{{ 'Starship ' + getTheNumber(starship) }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <hr class="mb-4"/>
+        <h2 class="text-title text-2xl font-semibold">Vehicles</h2>
+        <ul class="list-disc list-inside">
+          <li class="cursor-pointer" *ngFor="let vehicle of film.vehicles">
+            <span class="text-blue-300">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <hr class="mb-4"/>
+        <h2 class="text-title text-2xl font-semibold">Species</h2>
+        <ul class="list-disc list-inside">
+          <li class="cursor-pointer" *ngFor="let specie of film.species">
+            <span class="text-blue-300">{{ 'Specie ' + getTheNumber(specie) }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<ng-template #loading>
+  <div class="w-full h-80 flex justify-center items-center">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+</ng-template>
