@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { IPerson } from '../../interfaces/people.interface';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -17,7 +17,8 @@ export class PeopleDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private peopleService: PeopleService
+    private peopleService: PeopleService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +33,12 @@ export class PeopleDetailComponent implements OnInit {
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
     return match ? parseInt(match[1], 10) : NaN;
+  }
+
+  goToDetailFilm(filmId: string) {
+    const match = filmId.match(/\/(\d+)\/$/);
+    const number = match ? match[1] : null;
+
+    this.router.navigate(['/films', number]);
   }
 }

@@ -1,12 +1,12 @@
 <div *ngIf="person else loading" class="detail-wrapper p-8 bg-gray-900 text-white rounded-lg shadow-lg max-w-2xl mx-auto">
   <div class="flex flex-col items-center">
     <img alt="Character" src="https://primefaces.org/cdn/primeng/images/usercard.png" class="w-32 h-32 rounded-full mb-4">
-    <h1 class="text-3xl text-gray-50 font-bold">{{ person.name }}</h1>
+    <h1 class="text-title text-3xl text-gray-50 font-bold">{{ person.name }}</h1>
     <p class="text-lg text-gray-400">{{ person.birth_year }} | {{ person.gender }}</p>
   </div>
   <div class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-2xl text-gray-300 font-semibold mb-4">Details</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-4">Details</h2>
     <div class="grid grid-cols-2 gap-4">
       <div><span class="font-semibold">Height:</span> {{ person.height }} cm</div>
       <div><span class="font-semibold">Mass:</span> {{ person.mass }} kg</div>
@@ -18,16 +18,16 @@
   </div>
   <div *ngIf="person.films.length > 0" class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-2xl text-gray-300 font-semibold mb-2">Films</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let film of person.films">
-        <span class="cursor-pointer text-blue-400">{{ 'Film ' + getTheNumber(film) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailFilm(film)">{{ 'Film ' + getTheNumber(film) }}</span>
       </li>
     </ul>
   </div>
   <div *ngIf="person.vehicles.length > 0" class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-2xl text-gray-300 font-semibold mb-2">Vehicles</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Vehicles</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let vehicle of person.vehicles">
         <span class="cursor-pointer text-blue-400">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
@@ -36,7 +36,7 @@
   </div>
   <div *ngIf="person.vehicles.length > 0" class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-2xl text-gray-300 font-semibold mb-2">Starships</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Starships</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let starship of person.starships">
         <span class="cursor-pointer text-blue-400">{{ 'Starship ' + getTheNumber(starship) }}</span>
@@ -45,7 +45,7 @@
   </div>
   <div *ngIf="person.species.length > 0" class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-2xl text-gray-300 font-semibold mb-2">Species</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Species</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let species of person.species">
         <span class="cursor-pointer text-blue-400">{{ 'Species ' + getTheNumber(species) }}</span>

@@ -12,7 +12,7 @@
         <h2 class="text-title text-2xl font-semibold">Characters</h2>
         <ul class="list-disc list-inside">
           <li class="cursor-pointer" *ngFor="let character of film.characters">
-            <span class="text-blue-300">{{ 'Character ' + getTheNumber(character) }}</span>
+            <span class="text-blue-400" (click)="goToDetailPerson(character)">{{ 'Character ' + getTheNumber(character) }}</span>
           </li>
         </ul>
       </div>
@@ -21,7 +21,7 @@
         <h2 class="text-title text-2xl font-semibold">Planets</h2>
         <ul class="list-disc list-inside">
           <li class="cursor-pointer" *ngFor="let planet of film.planets">
-            <span class="text-blue-300">{{ 'Planet ' + getTheNumber(planet) }}</span>
+            <span class="text-blue-400">{{ 'Planet ' + getTheNumber(planet) }}</span>
           </li>
         </ul>
       </div>
@@ -30,7 +30,7 @@
         <h2 class="text-title text-2xl font-semibold">Starships</h2>
         <ul class="list-disc list-inside">
           <li class="cursor-pointer" *ngFor="let starship of film.starships">
-            <span class="text-blue-300">{{ 'Starship ' + getTheNumber(starship) }}</span>
+            <span class="text-blue-400">{{ 'Starship ' + getTheNumber(starship) }}</span>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
         <h2 class="text-title text-2xl font-semibold">Vehicles</h2>
         <ul class="list-disc list-inside">
           <li class="cursor-pointer" *ngFor="let vehicle of film.vehicles">
-            <span class="text-blue-300">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
+            <span class="text-blue-400">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
           </li>
         </ul>
       </div>
@@ -48,7 +48,7 @@
         <h2 class="text-title text-2xl font-semibold">Species</h2>
         <ul class="list-disc list-inside">
           <li class="cursor-pointer" *ngFor="let specie of film.species">
-            <span class="text-blue-300">{{ 'Specie ' + getTheNumber(specie) }}</span>
+            <span class="text-blue-400">{{ 'Specie ' + getTheNumber(specie) }}</span>
           </li>
         </ul>
       </div>
