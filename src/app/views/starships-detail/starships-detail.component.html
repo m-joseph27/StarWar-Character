@@ -23,7 +23,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let film of starShips.films">
-        <span class="cursor-pointer text-blue-400">{{ 'Film ' + getTheNumber(film) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('films', film)">{{ 'Film ' + getTheNumber(film) }}</span>
       </li>
     </ul>
   </div>
@@ -31,8 +31,8 @@
     <hr class="mb-4" />
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Pilot</h2>
     <ul class="list-disc list-inside">
-      <li *ngFor="let vehicle of starShips.pilots">
-        <span class="cursor-pointer text-blue-400">{{ 'Pilot ' + getTheNumber(vehicle) }}</span>
+      <li *ngFor="let pilot of starShips.pilots">
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('people', pilot)">{{ 'Pilot ' + getTheNumber(pilot) }}</span>
       </li>
     </ul>
   </div>

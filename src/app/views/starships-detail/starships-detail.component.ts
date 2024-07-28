@@ -32,6 +32,12 @@ export class StarshipsDetailComponent {
 
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
-    return match ? parseInt(match[1], 10) : NaN;
+    return match ? parseInt(match[1], 10) : null;
+  }
+
+  goToDetailView(type: string, typeId: any) {
+    const number = this.getTheNumber(typeId);
+
+    this.router.navigate([`/${type}`, number]);
   }
 }

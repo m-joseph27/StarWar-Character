@@ -32,18 +32,12 @@ export class VehicleDetailComponent {
 
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
-    return match ? parseInt(match[1], 10) : NaN;
+    return match ? parseInt(match[1], 10) : null;
   }
 
-  goToDetailFilm(filmId: string) {
-    const number = this.getTheNumber(filmId);
+  goToDetailView(type: string, typeId: any) {
+    const number = this.getTheNumber(typeId);
 
-    this.router.navigate(['/films', number]);
-  }
-
-  goToPersonDetail(data: any) {
-    const number = this.getTheNumber(data);
-
-    this.router.navigate(['/people', number]);
+    this.router.navigate([`/${type}`, number]);
   }
 }

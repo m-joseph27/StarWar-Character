@@ -32,36 +32,12 @@ export class PeopleDetailComponent implements OnInit {
 
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
-    return match ? parseInt(match[1], 10) : NaN;
+    return match ? parseInt(match[1], 10) : null;
   }
 
-  goToDetailFilm(filmId: string) {
-    const number = this.getTheNumber(filmId);
+  goToDetailView(type: string, typeId: any) {
+    const number = this.getTheNumber(typeId);
 
-    this.router.navigate(['/films', number]);
-  }
-
-  goToDetailPlanet(planet: any) {
-    const number = this.getTheNumber(planet.homeworld);
-
-    this.router.navigate(['/planets', number]);
-  }
-
-  goToDetailVehicle(vehicle: any) {
-    const number = this.getTheNumber(vehicle);
-
-    this.router.navigate(['/vehicles', number]);
-  }
-
-  goToDetailStarship(vehicle: any) {
-    const number = this.getTheNumber(vehicle);
-
-    this.router.navigate(['/starships', number]);
-  }
-
-  goToDetailSpecies(species: any) {
-    const number = this.getTheNumber(species);
-
-    this.router.navigate(['/species', number]);
+    this.router.navigate([`/${type}`, number]);
   }
 }

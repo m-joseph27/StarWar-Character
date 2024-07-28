@@ -32,12 +32,12 @@ export class PlanetDetailComponent {
 
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
-    return match ? parseInt(match[1], 10) : NaN;
+    return match ? parseInt(match[1], 10) : null;
   }
 
-  goToDetailFilm(filmId: string) {
-    const number = this.getTheNumber(filmId);
+  goToDetailView(type: string, typeId: any) {
+    const number = this.getTheNumber(typeId);
 
-    this.router.navigate(['/films', number]);
+    this.router.navigate([`/${type}`, number]);
   }
 }

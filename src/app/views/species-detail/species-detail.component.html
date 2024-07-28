@@ -21,7 +21,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let film of species.films">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailFilm(film)">{{ 'Film ' + getTheNumber(film) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('films', film)">{{ 'Film ' + getTheNumber(film) }}</span>
       </li>
     </ul>
   </div>
@@ -30,7 +30,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">People</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let people of species.people">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailPeople(people)">{{ 'Person ' + getTheNumber(people) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('people', people)">{{ 'Person ' + getTheNumber(people) }}</span>
       </li>
     </ul>
   </div>

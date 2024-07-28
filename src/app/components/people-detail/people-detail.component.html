@@ -13,7 +13,7 @@
       <div><span class="font-semibold">Hair Color:</span> {{ person.hair_color }}</div>
       <div><span class="font-semibold">Skin Color:</span> {{ person.skin_color }}</div>
       <div><span class="font-semibold">Eye Color:</span> {{ person.eye_color }}</div>
-      <div><span class="font-semibold">Homeworld: </span> <span (click)="goToDetailPlanet(person)" class="text-blue-400 cursor-pointer">Link</span></div>
+      <div><span class="font-semibold">Homeworld: </span> <span (click)="goToDetailView('planets', person.homeworld)" class="text-blue-400 cursor-pointer">Link</span></div>
     </div>
   </div>
   <div *ngIf="person.films.length > 0" class="mt-4">
@@ -21,7 +21,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let film of person.films">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailFilm(film)">{{ 'Film ' + getTheNumber(film) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('films', film)">{{ 'Film ' + getTheNumber(film) }}</span>
       </li>
     </ul>
   </div>
@@ -30,7 +30,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Vehicles</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let vehicle of person.vehicles">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailVehicle(vehicle)">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('vehicles', vehicle)">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
       </li>
     </ul>
   </div>
@@ -39,7 +39,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Starships</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let starship of person.starships">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailStarship(starship)">{{ 'Starship ' + getTheNumber(starship) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('starships', starship)">{{ 'Starship ' + getTheNumber(starship) }}</span>
       </li>
     </ul>
   </div>
@@ -48,7 +48,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Species</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let species of person.species">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailSpecies(species)">{{ 'Species ' + getTheNumber(species) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('species', species)">{{ 'Species ' + getTheNumber(species) }}</span>
       </li>
     </ul>
   </div>

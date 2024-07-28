@@ -8,8 +8,8 @@
     <hr class="mb-4" />
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-4">Details</h2>
     <div class="grid grid-cols-2 gap-4">
-      <div><span class="font-semibold">Manufacturer:</span> {{ vehicles.manufacturer }} cm</div>
-      <div><span class="font-semibold">Cost in credits:</span> {{ vehicles.cost_in_credits }} kg</div>
+      <div><span class="font-semibold">Manufacturer:</span> {{ vehicles.manufacturer }}</div>
+      <div><span class="font-semibold">Cost in credits:</span> {{ vehicles.cost_in_credits }}</div>
       <div><span class="font-semibold">Length:</span> {{ vehicles.length }}</div>
       <div><span class="font-semibold">Max Atmosphering Speed:</span> {{ vehicles.max_atmosphering_speed }}</div>
       <div><span class="font-semibold">Crew:</span> {{ vehicles.crew }}</div>
@@ -24,16 +24,16 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let film of vehicles.films">
-        <span class="cursor-pointer text-blue-400" (click)="goToDetailFilm(film)">{{ 'Film ' + getTheNumber(film) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('films', film)">{{ 'Film ' + getTheNumber(film) }}</span>
       </li>
     </ul>
   </div>
   <div *ngIf="vehicles.pilots.length > 0" class="mt-4">
     <hr class="mb-4" />
-    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Vehicles</h2>
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Pilots</h2>
     <ul class="list-disc list-inside">
-      <li *ngFor="let vehicle of vehicles.pilots">
-        <span class="cursor-pointer text-blue-400" (click)="goToPersonDetail(vehicle)">{{ 'Pilot ' + getTheNumber(vehicle) }}</span>
+      <li *ngFor="let pilot of vehicles.pilots">
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailView('people', pilot)">{{ 'Pilot ' + getTheNumber(pilot) }}</span>
       </li>
     </ul>
   </div>

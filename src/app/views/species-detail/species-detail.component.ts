@@ -35,15 +35,9 @@ export class SpeciesDetailComponent {
     return match ? parseInt(match[1], 10) : null;
   }
 
-  goToDetailFilm(filmId: string) {
-    const number = this.getTheNumber(filmId);
+  goToDetailView(type: string, typeId: any) {
+    const number = this.getTheNumber(typeId);
 
-    this.router.navigate(['/films', number]);
-  }
-
-  goToDetailPeople(filmId: string) {
-    const number = this.getTheNumber(filmId);
-
-    this.router.navigate(['/people', number]);
+    this.router.navigate([`/${type}`, number]);
   }
 }
