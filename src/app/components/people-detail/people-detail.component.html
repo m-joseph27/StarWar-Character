@@ -48,7 +48,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Species</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let species of person.species">
-        <span class="cursor-pointer text-blue-400">{{ 'Species ' + getTheNumber(species) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailSpecies(species)">{{ 'Species ' + getTheNumber(species) }}</span>
       </li>
     </ul>
   </div>

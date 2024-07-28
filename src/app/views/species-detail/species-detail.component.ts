@@ -32,6 +32,18 @@ export class SpeciesDetailComponent {
 
   getTheNumber(data: any) {
     const match = data.match(/\/(\d+)\/$/);
-    return match ? parseInt(match[1], 10) : NaN;
+    return match ? parseInt(match[1], 10) : null;
+  }
+
+  goToDetailFilm(filmId: string) {
+    const number = this.getTheNumber(filmId);
+
+    this.router.navigate(['/films', number]);
+  }
+
+  goToDetailPeople(filmId: string) {
+    const number = this.getTheNumber(filmId);
+
+    this.router.navigate(['/people', number]);
   }
 }

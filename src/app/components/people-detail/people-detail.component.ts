@@ -58,4 +58,10 @@ export class PeopleDetailComponent implements OnInit {
 
     this.router.navigate(['/starships', number]);
   }
+
+  goToDetailSpecies(species: any) {
+    const number = this.getTheNumber(species);
+
+    this.router.navigate(['/species', number]);
+  }
 }
