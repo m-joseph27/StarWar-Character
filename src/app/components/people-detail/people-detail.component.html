@@ -39,7 +39,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Starships</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let starship of person.starships">
-        <span class="cursor-pointer text-blue-400">{{ 'Starship ' + getTheNumber(starship) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailStarship(starship)">{{ 'Starship ' + getTheNumber(starship) }}</span>
       </li>
     </ul>
   </div>

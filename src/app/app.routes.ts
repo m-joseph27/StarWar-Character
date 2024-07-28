@@ -4,6 +4,7 @@ import { PeopleDetailComponent } from './components/people-detail/people-detail.
 import { FilmDetailComponent } from './components/film-detail/film-detail.component';
 import { PlanetDetailComponent } from './views/planet-detail/planet-detail.component';
 import { VehicleDetailComponent } from './views/vehicle-detail/vehicle-detail.component';
+import { StarshipsDetailComponent } from './views/starships-detail/starships-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/people', pathMatch: 'full' },
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'films/:id', component: FilmDetailComponent },
   { path: 'planets/:id', component: PlanetDetailComponent },
   { path: 'vehicles/:id', component: VehicleDetailComponent },
+  { path: 'starships/:id', component: StarshipsDetailComponent },
 ];

@@ -52,4 +52,10 @@ export class PeopleDetailComponent implements OnInit {
 
     this.router.navigate(['/vehicles', number]);
   }
+
+  goToDetailStarship(vehicle: any) {
+    const number = this.getTheNumber(vehicle);
+
+    this.router.navigate(['/starships', number]);
+  }
 }
