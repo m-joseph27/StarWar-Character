@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { IPerson } from '../../interfaces/people.interface';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { IPlanet } from '../../interfaces/planet.interface';
 
 @Component({
   selector: 'app-people-detail',
@@ -36,9 +37,14 @@ export class PeopleDetailComponent implements OnInit {
   }
 
   goToDetailFilm(filmId: string) {
-    const match = filmId.match(/\/(\d+)\/$/);
-    const number = match ? match[1] : null;
+    const number = this.getTheNumber(filmId);
 
     this.router.navigate(['/films', number]);
+  }
+
+  goToDetailPlanet(planet: any) {
+    const number = this.getTheNumber(planet.homeworld);
+
+    this.router.navigate(['/planets', number]);
   }
 }

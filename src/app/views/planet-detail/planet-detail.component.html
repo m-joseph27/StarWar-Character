@@ -1,0 +1,45 @@
+<p>planet-detail works!</p>
+<div *ngIf="planet else loading" class="detail-wrapper p-8 bg-gray-900 text-white rounded-lg shadow-lg max-w-2xl mx-auto">
+  <div class="flex flex-col items-center">
+    <img alt="Character" src="https://primefaces.org/cdn/primeng/images/usercard.png" class="w-32 h-32 rounded-full mb-4">
+    <h1 class="text-title text-3xl text-gray-50 font-bold">{{ planet.name }}</h1>
+    <p class="text-lg text-gray-400">{{ 'Population: ' +  planet.population }}</p>
+  </div>
+  <div class="mt-4">
+    <hr class="mb-4" />
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-4">Details</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div><span class="font-semibold">Rotation Period:</span> {{ planet.rotation_period }} cm</div>
+      <div><span class="font-semibold">Orbit Period:</span> {{ planet.orbital_period }} kg</div>
+      <div><span class="font-semibold">Diameter:</span> {{ planet.diameter }}</div>
+      <div><span class="font-semibold">Climate:</span> {{ planet.climate }}</div>
+      <div><span class="font-semibold">Gravity:</span> {{ planet.gravity }}</div>
+      <div><span class="font-semibold">Terrain: </span> {{ planet.terrain }}</div>
+      <div><span class="font-semibold">Surface Water: </span> {{ planet.surface_water }}</div>
+    </div>
+  </div>
+  <div *ngIf="planet.films.length > 0" class="mt-4">
+    <hr class="mb-4" />
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Films</h2>
+    <ul class="list-disc list-inside">
+      <li *ngFor="let film of planet.films">
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailFilm(film)">{{ 'Film ' + getTheNumber(film) }}</span>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="planet.residents.length > 0" class="mt-4">
+    <hr class="mb-4" />
+    <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Species</h2>
+    <ul class="list-disc list-inside">
+      <li *ngFor="let species of planet.residents">
+        <span class="cursor-pointer text-blue-400">{{ 'Person ' + getTheNumber(species) }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="w-full h-full flex justify-center items-center">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+</ng-template>

@@ -13,7 +13,7 @@
       <div><span class="font-semibold">Hair Color:</span> {{ person.hair_color }}</div>
       <div><span class="font-semibold">Skin Color:</span> {{ person.skin_color }}</div>
       <div><span class="font-semibold">Eye Color:</span> {{ person.eye_color }}</div>
-      <div><span class="font-semibold">Homeworld: </span> <a [href]="person.homeworld" class="text-blue-400">Link</a></div>
+      <div><span class="font-semibold">Homeworld: </span> <span (click)="goToDetailPlanet(person)" class="text-blue-400 cursor-pointer">Link</span></div>
     </div>
   </div>
   <div *ngIf="person.films.length > 0" class="mt-4">
