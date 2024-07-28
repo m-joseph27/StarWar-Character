@@ -15,7 +15,7 @@ export class FilmService {
     return this.http.get<any>(`${this.apiUrl}?page=${page}`);
   }
 
-  getDetailFilm(personId: string): Observable<IFilms> {
-    return this.http.get<IFilms>(`${this.apiUrl}/${personId}`);
+  getDetailFilm(filmId: string): Observable<IFilms> {
+    return this.http.get<IFilms>(`${this.apiUrl}/${filmId}`);
   }
 }

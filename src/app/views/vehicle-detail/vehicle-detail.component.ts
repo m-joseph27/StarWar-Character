@@ -42,7 +42,6 @@ export class VehicleDetailComponent {
   }
 
   goToPersonDetail(data: any) {
-    console.log('data', data);
     const number = this.getTheNumber(data);
 
     this.router.navigate(['/people', number]);
