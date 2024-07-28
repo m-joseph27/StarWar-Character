@@ -30,7 +30,7 @@
     <h2 class="text-title text-2xl text-gray-300 font-semibold mb-2">Vehicles</h2>
     <ul class="list-disc list-inside">
       <li *ngFor="let vehicle of person.vehicles">
-        <span class="cursor-pointer text-blue-400">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
+        <span class="cursor-pointer text-blue-400" (click)="goToDetailVehicle(vehicle)">{{ 'Vehicle ' + getTheNumber(vehicle) }}</span>
       </li>
     </ul>
   </div>

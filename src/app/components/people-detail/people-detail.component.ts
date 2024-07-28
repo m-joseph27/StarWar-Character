@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { IPerson } from '../../interfaces/people.interface';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { IPlanet } from '../../interfaces/planet.interface';
 
 @Component({
   selector: 'app-people-detail',
@@ -46,5 +45,11 @@ export class PeopleDetailComponent implements OnInit {
     const number = this.getTheNumber(planet.homeworld);
 
     this.router.navigate(['/planets', number]);
+  }
+
+  goToDetailVehicle(vehicle: any) {
+    const number = this.getTheNumber(vehicle);
+
+    this.router.navigate(['/vehicles', number]);
   }
 }
