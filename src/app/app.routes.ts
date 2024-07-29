@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { CardComponent } from './components/card/card.component';
+import { CardComponent } from './views/people/card/card.component';
 import { PeopleDetailComponent } from './views/people-detail/people-detail.component';
 import { FilmDetailComponent } from './views/film-detail/film-detail.component';
 import { PlanetDetailComponent } from './views/planet-detail/planet-detail.component';

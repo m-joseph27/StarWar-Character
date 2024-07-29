@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './components/card/card.component';
+import { CardComponent } from './views/people/card/card.component';
 import { filter } from 'rxjs/operators';
 import { FooterComponent } from './components/footer/footer.component';
 

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { PeopleService } from '../../services/people.service';
+import { PeopleService } from '../../../services/people.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { IPeople, IPerson } from '../../interfaces/people.interface';
+import { IPeople } from '../../../interfaces/people.interface';
 import { Router } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @Component({
