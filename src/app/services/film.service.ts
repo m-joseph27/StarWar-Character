@@ -11,10 +11,6 @@ export class FilmService {
 
   constructor(private http: HttpClient) { }
 
-  getFilms(page: number): Observable<IFilmResponse> {
-    return this.http.get<any>(`${this.apiUrl}?page=${page}`);
-  }
-
   getDetailFilm(filmId: string): Observable<IFilms> {
     return this.http.get<IFilms>(`${this.apiUrl}/${filmId}`);
   }

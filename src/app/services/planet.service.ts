@@ -11,10 +11,6 @@ export class PlanetService {
 
   constructor(private http: HttpClient) { }
 
-  getPlanets(page: number): Observable<IPlanetRespon> {
-    return this.http.get<any>(`${this.apiUrl}?page=${page}`);
-  }
-
   getDetailPlanets(planetId: string): Observable<IPlanet> {
     return this.http.get<IPlanet>(`${this.apiUrl}/${planetId}`);
   }

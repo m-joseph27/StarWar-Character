@@ -11,7 +11,7 @@ export class StarShipService {
 
   constructor(private http: HttpClient) { }
 
-  getDetailVehicle(starshipId: string): Observable<IStarship> {
+  getDetailStarship(starshipId: string): Observable<IStarship> {
     return this.http.get<IStarship>(`${this.apiUrl}/${starshipId}`);
   }
 }

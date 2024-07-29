@@ -24,7 +24,7 @@ export class StarshipsDetailComponent {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.starShipService.getDetailVehicle(id).subscribe(data => {
+      this.starShipService.getDetailStarship(id).subscribe(data => {
         this.starShips = data;
       });
     }
