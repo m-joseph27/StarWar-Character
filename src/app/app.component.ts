@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
 import { filter } from 'rxjs/operators';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { filter } from 'rxjs/operators';
     CommonModule,
     NavbarComponent,
     CardComponent,
+    FooterComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
