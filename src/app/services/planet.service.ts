@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlanet, IPlanetRespon } from '../interfaces/planet.interface';
+import { IPlanet } from '../interfaces/planet.interface';
+import { environment } from '../environments/environment.js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlanetService {
-  private apiUrl = 'https://swapi.dev/api/planets';
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getDetailPlanets(planetId: string): Observable<IPlanet> {
-    return this.http.get<IPlanet>(`${this.apiUrl}/${planetId}`);
+    return this.http.get<IPlanet>(`${this.apiUrl}planets/${planetId}`);
   }
 }
